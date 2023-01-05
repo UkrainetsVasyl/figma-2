@@ -81,6 +81,14 @@ process.stdin.on('keypress', function (ch, key) {
     if (key.name == 'o') {
         lastConnection.send('rotate-right');
     }
+
+    if (key.name == 'r') {
+        lastConnection.send('page-next');
+    }
+
+    if (key.name == 'f') {
+        lastConnection.send('page-prev');
+    }
 });
 
 process.stdin.setRawMode(true);

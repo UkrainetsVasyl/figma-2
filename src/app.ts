@@ -1,5 +1,6 @@
 import Shape from "./features/shape";
 import Resize from "./features/resize";
+import Page from "./features/page";
 
 if (figma.editorType === 'figma') {
   figma.showUI(__html__);
@@ -56,6 +57,14 @@ if (figma.editorType === 'figma') {
 
     if (msg.type === 'rotate-left') {
       new Resize().rotateLeft();
+    }
+
+    if (msg.type === 'page-next') {
+      new Page().toNext();
+    }
+
+    if (msg.type === 'page-prev') {
+      new Page().toPrev();
     }
   }
 };
