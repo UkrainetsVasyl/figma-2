@@ -11,6 +11,10 @@ if (figma.editorType === 'figma') {
       new Shape().create();
     }
 
+    if (msg.type === 'star') {
+      new Shape().star();
+    }
+
     if (msg.type === 'resize-height-up') {
       new Resize().increaseHeight();
     }

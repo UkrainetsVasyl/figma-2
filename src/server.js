@@ -30,8 +30,12 @@ process.stdin.on('keypress', function (ch, key) {
         lastConnection.send('close');
     }
 
-    if (key.name == '1') {
+    if (key.name == 'z') {
         lastConnection.send('shape');
+    }
+
+    if (key.name == 'x') {
+        lastConnection.send('star');
     }
 
     if (key.name == 'w') {
