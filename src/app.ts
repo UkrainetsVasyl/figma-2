@@ -1,6 +1,7 @@
 import Shape from "./features/shape";
 import Resize from "./features/resize";
 import Page from "./features/page";
+import Image from "./features/image";
 
 if (figma.editorType === 'figma') {
   figma.showUI(__html__);
@@ -13,6 +14,10 @@ if (figma.editorType === 'figma') {
 
     if (msg.type === 'star') {
       new Shape().star();
+    }
+
+    if (msg.type === 'image-svg') {
+      new Image().addSVG();
     }
 
     if (msg.type === 'resize-height-up') {

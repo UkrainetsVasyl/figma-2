@@ -38,6 +38,10 @@ process.stdin.on('keypress', function (ch, key) {
         lastConnection.send('star');
     }
 
+    if (key.name == 'b') {
+        lastConnection.send('image-svg');
+    }
+
     if (key.name == 'w') {
         lastConnection.send('resize-height-up');
     }
