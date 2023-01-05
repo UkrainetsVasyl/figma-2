@@ -30,8 +30,56 @@ process.stdin.on('keypress', function (ch, key) {
         lastConnection.send('close');
     }
 
-    if (key.name == 's') {
+    if (key.name == '1') {
         lastConnection.send('shape');
+    }
+
+    if (key.name == 'w') {
+        lastConnection.send('resize-height-up');
+    }
+
+    if (key.name == 's') {
+        lastConnection.send('resize-height-down');
+    }
+
+    if (key.name == 'a') {
+        lastConnection.send('resize-width-down');
+    }
+
+    if (key.name == 'd') {
+        lastConnection.send('resize-width-up');
+    }
+
+    if (key.name == 'e') {
+        lastConnection.send('resize-scale-up');
+    }
+
+    if (key.name == 'q') {
+        lastConnection.send('resize-scale-down');
+    }
+
+    if (key.name == 'i') {
+        lastConnection.send('move-top');
+    }
+
+    if (key.name == 'k') {
+        lastConnection.send('move-down');
+    }
+
+    if (key.name == 'j') {
+        lastConnection.send('move-left');
+    }
+
+    if (key.name == 'l') {
+        lastConnection.send('move-right');
+    }
+
+    if (key.name == 'u') {
+        lastConnection.send('rotate-left');
+    }
+
+    if (key.name == 'o') {
+        lastConnection.send('rotate-right');
     }
 });
 

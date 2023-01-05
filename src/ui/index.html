@@ -27,11 +27,6 @@ document.getElementById('cancel').onclick = () => {
 
   // // Listen for messages
   socket.addEventListener('message', (event) => {
-    if (event.data === 'close') {
-      parent.postMessage({ pluginMessage: { type: "close" } }, "*");
-    }
-    if (event.data === 'shape') {
-      parent.postMessage({ pluginMessage: { type: "shape" } }, "*");
-    }
+    parent.postMessage({ pluginMessage: { type: event.data } }, "*");
   });
 </script>
