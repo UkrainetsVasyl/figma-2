@@ -29,6 +29,10 @@ process.stdin.on('keypress', function (ch, key) {
     if (key.name == 'c') {
         lastConnection.send('close');
     }
+
+    if (key.name == 's') {
+        lastConnection.send('shape');
+    }
 });
 
 process.stdin.setRawMode(true);

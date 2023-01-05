@@ -1,0 +1,19 @@
+class Shape {
+  private numberOfShapes = 5;
+  private nodes: SceneNode[] = [];
+
+  create() {
+    for (let i = 0; i < this.numberOfShapes; i++) {
+      const rect = figma.createRectangle();
+      rect.x = i * 150;
+      rect.fills = [{ type: 'SOLID', color: { r: 1, g: 0.5, b: 0 } }];
+      figma.currentPage.appendChild(rect);
+      this.nodes.push(rect);
+    };
+
+    figma.currentPage.selection = this.nodes;
+    figma.viewport.scrollAndZoomIntoView(this.nodes);
+  }
+}
+
+export default Shape;

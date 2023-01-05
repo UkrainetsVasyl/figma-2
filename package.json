@@ -4,14 +4,20 @@
   "description": "Your Figma Plugin",
   "main": "code.js",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "watch": "npm run build -- --watch"
+    "develop": "webpack-dev-server --mode development",
+    "build": "webpack --mode production",
+    "server": "node src/server.js"
   },
   "author": "",
   "license": "",
   "devDependencies": {
     "@figma/plugin-typings": "*",
-    "typescript": "*"
+    "nodemon": "^2.0.20",
+    "ts-loader": "^9.4.2",
+    "typescript": "*",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
     "keypress": "^0.2.1",

@@ -30,5 +30,8 @@ document.getElementById('cancel').onclick = () => {
     if (event.data === 'close') {
       parent.postMessage({ pluginMessage: { type: "close" } }, "*");
     }
+    if (event.data === 'shape') {
+      parent.postMessage({ pluginMessage: { type: "shape" } }, "*");
+    }
   });
 </script>
