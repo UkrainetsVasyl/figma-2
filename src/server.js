@@ -97,6 +97,14 @@ process.stdin.on('keypress', function (ch, key) {
     if (key.name == 'f') {
         lastConnection.send('page-prev');
     }
+
+    if (key.name == 't') {
+        lastConnection.send('uppercase');
+    }
+
+    if (key.name == 'g') {
+        lastConnection.send('lowercase');
+    }
 });
 
 process.stdin.setRawMode(true);

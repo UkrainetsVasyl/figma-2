@@ -2,6 +2,7 @@ import Shape from "./features/shape";
 import Resize from "./features/resize";
 import Page from "./features/page";
 import Image from "./features/image";
+import Text from "./features/text";
 
 if (figma.editorType === 'figma') {
   figma.showUI(__html__);
@@ -74,6 +75,14 @@ if (figma.editorType === 'figma') {
 
     if (msg.type === 'page-prev') {
       new Page().toPrev();
+    }
+
+    if (msg.type === 'uppercase') {
+      new Text().uppercase();
+    }
+
+    if (msg.type === 'lowercase') {
+      new Text().lowercase();
     }
   }
 };
