@@ -5,9 +5,13 @@ import Image from "./features/image";
 import Text from "./features/text";
 
 if (figma.editorType === 'figma') {
-  figma.showUI(__html__);
+  figma.showUI(__html__, { width: 150, height: 0 });
 
   figma.ui.onmessage = msg => {
+
+    if (msg.type === 'close') {
+      figma.closePlugin('Logitech plugin closed!');
+    }
 
     if (msg.type === 'shape') {
       new Shape().create();
